@@ -6,7 +6,7 @@
 -- Wikipedia.)
 Start Transaction;
 Insert into city(name , countrycode, district, population)
-Values ('Smalleville','USA','Kansas', 45001 );
+Values ('Smallville','USA','Kansas', 45001 );
 Commit;
 Rollback;
 Select * From city Where name = 'Smalleville';
@@ -27,7 +27,7 @@ Commit;
 Rollback;
 Select * From countrylanguage Where language = 'Krypto-babble';
 -- 4. Set the US captial to Smallville, Kansas in the country table.
-Select id from city where name ='Smalleville';
+Select id from city where name ='Smallville';
 Start Transaction;
 Update country
 Set capital = 4081 where code = 'USA';
@@ -37,7 +37,7 @@ Select capital from country where code = 'USA';
 -- 5. Delete Smallville, Kansas from the city table. (Did it succeed? Why?)
 Start transaction;
 Delete From city
-where name = 'Smalleville';
+where name = 'Smallville';
 Commit;
 Rollback;
 -- wont work bescause it violates foriegn constraint key
@@ -55,7 +55,7 @@ SELECT city.name FROM country JOIN city ON city.countrycode = country.code WHERE
 -- 7. Delete Smallville, Kansas from the city table. (Did it succeed? Why?)
 Start transaction;
 Delete From city
-where name = 'Smalleville';
+where name = 'Smallville';
 Commit;
 Rollback;
 SELECT * FROM city WHERE name = 'Smallville';
